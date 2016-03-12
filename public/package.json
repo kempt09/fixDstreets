@@ -1,0 +1,24 @@
+{
+  "name": "fixDstreets",
+  "private": false,
+  "version": "0.0.1",
+  "description": "community infrastructure tracking system",
+  "repository": "repository",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-cookies": "^1.5.0",
+    "angular-loader": "^1.5.0",
+    "angular-messages": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-sanitize": "^1.5.0",
+    "angular-touch": "^1.5.0",
+    "angular-ui-bootstrap": "^1.1.2"
+  }
+}
