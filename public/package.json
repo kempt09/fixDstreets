@@ -1,9 +1,12 @@
 {
-  "name": "fixDstreets",
+  "name": "fixdstreets",
   "private": false,
   "version": "0.0.1",
   "description": "community infrastructure tracking system",
-  "repository": "repository",
+  "repository": {
+    "type": "git",
+    "url": "repository"
+  },
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.0",
@@ -19,6 +22,16 @@
     "angular-resource": "^1.5.0",
     "angular-sanitize": "^1.5.0",
     "angular-touch": "^1.5.0",
-    "angular-ui-bootstrap": "^1.1.2"
-  }
+    "angular-ui-bootstrap": "^1.1.2",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1",
+    "karma": "^0.13.22"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
 }
