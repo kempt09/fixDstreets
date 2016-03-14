@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('one', function () {
-  return gulp.src('./css/one.styl')
+  return gulp.src('./stylesheets/one.styl')
     .pipe(stylus())
-    .pipe(gulp.dest('./css/build'));
+    .pipe(gulp.dest('./stylesheets/build'));
 });
