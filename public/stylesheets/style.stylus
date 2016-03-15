@@ -1,3 +1,8 @@
 #map
   width 100%
   height 500px
+  
+#cone 
+  	width 5%
+  	height 3em
+  	margin 0.5%

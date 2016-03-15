@@ -1,3 +1,5 @@
 var app = app || {};
 
-app.factory()
+app.factory('getTickets', function($http){
+	return $http.get('/api/find');
+});
