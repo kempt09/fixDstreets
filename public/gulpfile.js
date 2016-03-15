@@ -4,8 +4,7 @@ var karma = require('karma').Server;
 var jshint = require('gulp-jshint');
 
 gulp.task('test', function(done){   
-	new karma({     configFile: __dirname + '/karma.conf.js'   
-	}, done).start(); 
+	new karma({configFile: __dirname + '/karma.conf.js'}, done).start();
 });
 
 gulp.task('lint', function() {
@@ -25,7 +24,7 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('one', function () {
-  return gulp.src('./css/one.styl')
+  return gulp.src('./stylesheets/style.stylus')
     .pipe(stylus())
-    .pipe(gulp.dest('./css/build'));
+    .pipe(gulp.dest('./stylesheets/style.css'));
 });

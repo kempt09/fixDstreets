@@ -25,7 +25,7 @@ router.route('/ticket').post(function (req, res) {
     issue.long = req.body.long;
     issue.date = Date.now();
     issue.description = req.body.description;
-    issue.image = req.body.image;
+    issue.image = req.file.image;
     //save issue
     issue.save(function (err) {
         if (err) {
