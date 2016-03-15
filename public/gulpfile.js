@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var jshint = require('gulp-jshint');
 
-
 gulp.task('lint', function() {
   return gulp.src('*.js')
     .pipe(jshint())
@@ -17,7 +16,6 @@ gulp.task('browser-sync', function() {
         }
     });
 });
-
 
 gulp.task('style', function () {
   return gulp.src('./stylesheets/style.styl')
