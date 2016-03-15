@@ -20,7 +20,8 @@ mongoose.connect('mongodb://fixdstreets:GrandCircus2016@ds011429.mlab.com:11429/
 
 // Routes to use
 app.use('/', routes);
-app.use('/api', routes);
+app.use('/ticket', routes);
+app.use('/tickets', routes);
 
 //Export
 module.exports = app;
