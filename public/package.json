@@ -7,9 +7,6 @@
     "type": "git",
     "url": "repository"
   },
-  "scripts": {
-    "start": "node index"
-  },
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.0",
