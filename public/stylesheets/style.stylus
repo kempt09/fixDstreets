@@ -3,6 +3,10 @@
   height 500px
   
 #cone 
-  	width 5%
+  	// width 5%
   	height 3em
   	margin 0.5%
+
+#worker
+	 // width 3%
+	 height 3.5em
