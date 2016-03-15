@@ -18,14 +18,16 @@ router.use(function (req, res, next) {
 
 // Create Endpoints for internal API
 
-router.route('/ticket').post(function (req, res) {
+// Post User input to MongoDB
+router.route('/api/submit').post(function (req, res) {
     'use strict';
-    var issue = new Ticket();
-    issue.lat = req.body.lat;
-    issue.long = req.body.long;
-    issue.date = Date.now();
-    issue.description = req.body.description;
-    issue.image = req.file.image;
+    var issue = new Ticket({
+        lat : req.body.lat,
+        long : req.body.long,
+        date : Date.now(),
+        description : req.body.description,
+        image : req.body.image
+    });
     //save issue
     issue.save(function (err) {
         if (err) {
@@ -34,7 +36,9 @@ router.route('/ticket').post(function (req, res) {
         res.json({message: 'Ticket Created'});
     });
 });
-router.route('/tickets').get(function (res, req) {
+
+// Find tickets
+router.route('/api/find').get(function (res, req) {
     'use strict';
     Ticket.find(function (err, response) {
         if (err) {
@@ -45,3 +49,5 @@ router.route('/tickets').get(function (res, req) {
 });
 
 module.exports = router;
+
+

@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/api');
 var mongoose = require('mongoose');
+var multer = require('multer');
 var app = express();
 
 // view engine setup
@@ -20,8 +21,10 @@ mongoose.connect('mongodb://fixdstreets:GrandCircus2016@ds011429.mlab.com:11429/
 
 // Routes to use
 app.use('/', routes);
-app.use('/ticket', routes);
-app.use('/tickets', routes);
+app.use('/api', routes);
+//app.use(multer({
+//    dest: './uploads/'
+//}));
 
 //Export
 module.exports = app;
