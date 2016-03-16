@@ -1,22 +1,26 @@
 var app = app || {};
 
-app.controller('submitIssue', ['$scope', '$http', function($scope, $http){
+app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($scope, $http, dbCollection) {
     'use strict';
-    $scope.lat = '';
-    $scope.long = '';
-    $scope.description = '';
-    $scope.image = '';
-    $scope.postTicket = $http({
-        method: 'POST',
-        url: '/api/submit',
-        data: {
-            lat: $scope.lat,
-            long: $scope.long,
-            description: $scope.description,
-            image: $scope.image
-        }
-    });
+    $scope.data = {};
+    $scope.data.lat = dbCollection.lat;
+    $scope.data.long = dbCollection.long;
+    $scope.sendData = function () {
+        $http.post('/api/submit', $scope.data)
+            .success(function (data) {
+                $scope.data = '';
+                $scope.info = data;
+                console.log(data);
+            })
+            .error(function (data) {
+                console.log('error' + data);
+            });
+    };
 }]);
+
+
+
+
 
 
 
