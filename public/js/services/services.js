@@ -1,5 +1,6 @@
 var app = app || {};
 
 app.factory('getTickets', function($http){
-	return $http.get('/api/find');
+    'use strict';
+    return $http.get('/api/find');
 });

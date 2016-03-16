@@ -7,7 +7,11 @@ app.config(function($routeProvider){
             templateUrl: './views/index.html'
         })
         .when('/issue', {
-        templateUrl: './views/submit-issue.html',
-        controller: 'submitIssue'
-    });
+            templateUrl: './views/submit-issue.html',
+            controller: 'submitIssue'
+        })
+        .when('/map', {
+            templateUrl: './views/map.html',
+            controller: 'mapbox'
+        });
 });
