@@ -8,27 +8,32 @@
 #navBar
 	display none
 
-#homeImage
-	width 100%
-	height 500px
-	position fixed
-	top 0px
-	left 0px
-
-#homeImage img
-	z-index -3
-	// opacity 0.9
-
 h1
 	z-index 6
-	margin 2% auto	
+	// margin 2% auto	
 	
+
+
 #submitPage
 	z-index 6
-	margin 10% auto
+	// margin 10% auto
 	border 3px solid black
 	display block
 
+#over {
+  width: 600px;
+  z-index: 10;
+}
+
+#homeImage{
+  top: 0px;
+  width: 420px;
+  left: 0px;
+  border: 1px solid;
+  height: 500px;
+  z-index: -4;
+  position: fixed;
+}
 
 
 	
