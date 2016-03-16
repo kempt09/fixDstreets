@@ -8,11 +8,6 @@
 	margin-bottom 0
 	padding-bottom 0
   
-#cone 
-  	// width 5%
-  	height 3em
-  	margin 0.5%
-
 #worker
 	 // width 3%
 	 height 3.5em
@@ -27,3 +22,34 @@
 	height 75px
 	width 75px
 	margin-top 8px
+
+#navBar
+	display none
+	
+#submitPage
+	z-index 6
+	margin 10% auto
+	display block
+
+#over 
+  z-index 10
+  
+#title
+	width 60%
+	text-align center
+	font-size 9em
+	color white
+	margin 5% auto
+	text-shadow 3px 3px 0 black
+
+#homeImage
+  top 0px
+  width 420px
+  left 0px
+  height 500px
+  z-index -4
+  position fixed
+  
+#homeImage img
+	opacity 0.6
+
