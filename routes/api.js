@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('*', function (req, res) {
+router.get('/', function (req, res) {
     'use strict';
     res.sendfile('./public/index.html');
 });
@@ -38,13 +38,13 @@ router.route('/api/submit').post(function (req, res) {
 });
 
 // Find tickets
-router.route('/api/find').get(function (res, req) {
+router.route('/api/find').get(function (req, res) {
     'use strict';
     Ticket.find(function (err, response) {
         if (err) {
             res.send(err);
         }
-        req.json(response);
+        res.json(response);
     });
 });
 
