@@ -8,24 +8,30 @@
 #navBar {
   display: none;
 }
-h1 {
-  z-index: 6;
-}
 #submitPage {
   z-index: 6;
-  border: 3px solid #000;
+  margin: 10% auto;
   display: block;
 }
 #over {
-  width: 600px;
   z-index: 10;
+}
+#title {
+  width: 60%;
+  text-align: center;
+  font-size: 9em;
+  color: #fff;
+  margin: 5% auto;
+  text-shadow: 3px 3px 0 #000;
 }
 #homeImage {
   top: 0px;
   width: 420px;
   left: 0px;
-  border: 1px solid;
   height: 500px;
   z-index: -4;
   position: fixed;
+}
+#homeImage img {
+  opacity: 0.6;
 }
