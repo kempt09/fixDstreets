@@ -2,11 +2,35 @@
   width 100%
   height 500px
   
-#cone 
-  	// width 5%
-  	height 3em
-  	margin 0.5%
-
 #worker
-	 // width 3%
 	 height 3.5em
+
+#navBar
+	display none
+
+#homeImage
+	width 100%
+	height 500px
+	position fixed
+	top 0px
+	left 0px
+
+#homeImage img
+	z-index -3
+	// opacity 0.9
+
+h1
+	z-index 6
+	margin 2% auto	
+	
+#submitPage
+	z-index 6
+	margin 10% auto
+	border 3px solid black
+	display block
+
+
+
+	
+
+	
