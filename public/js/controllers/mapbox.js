@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.controller('mapbox', [function () {
+app.controller('mapbox', ['$scope', 'dbCollection', function ($scope, dbCollection) {
     'use strict';
     mapboxgl.accessToken = 'pk.eyJ1IjoiZml4ZHN0cmVldHMiLCJhIjoiY2lsczNxMHYxMDhzNXZmbHlmbWdkM2psaiJ9.0HF3gwCxpsc_s2d8HxvXwg';
     var bounds = [
@@ -17,6 +17,9 @@ app.controller('mapbox', [function () {
     });
     $scope.coordinates = '';
     map.on('click', function (e) {
-        $scope.coordinates = e.lngLat;
+        dbCollection.lat = e.lngLat.lat;
+        dbCollection.long = e.lngLat.lng;
+        console.log(dbCollection.lat);
+        console.log(dbCollection.long);
     });
 }]);

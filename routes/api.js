@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('/', function (req, res) {
+router.get('*', function (req, res) {
     'use strict';
     res.sendfile('./public/index.html');
 });
@@ -22,11 +22,11 @@ router.use(function (req, res, next) {
 router.route('/api/submit').post(function (req, res) {
     'use strict';
     var issue = new Ticket({
-        lat : req.body.lat,
-        long : req.body.long,
-        date : Date.now(),
-        description : req.body.description,
-        image : req.body.image
+        lat: req.body.lat,
+        long: req.body.long,
+        date: Date.now(),
+        description: req.body.description,
+        image: req.body.image
     });
     //save issue
     issue.save(function (err) {

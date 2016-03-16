@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/api');
 var mongoose = require('mongoose');
-var multer = require('multer');
+//var multer = require('multer');
 var app = express();
 
 // view engine setup
