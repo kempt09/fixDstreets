@@ -19,12 +19,10 @@ app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($sc
 
 app.controller('ticketFeed', ['$scope', 'getTickets', '$http', function ($scope, getTickets, $http) {
     'use strict';
-    $scope.collection = '';
-    $scope.address = [];
-    $scope.convert = function (x, y) {
+    $scope.collection = {};
+    var convert = function (x, y) {
         $http.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + x + ',' + y + '.json?access_token=pk.eyJ1IjoiZml4ZHN0cmVldHMiLCJhIjoiY2lsczNxMHYxMDhzNXZmbHlmbWdkM2psaiJ9.0HF3gwCxpsc_s2d8HxvXwg').success(function (data) {
-            $scope.address.push(data.features[0].place_name);
-            $scope.collection.data;
+            console.log(data.features[0].place_name);
         });
     };
     getTickets.then(function(response){
@@ -42,8 +40,9 @@ app.controller('ticketFeed', ['$scope', 'getTickets', '$http', function ($scope,
             interactive: true,
             maxBounds: bounds
         });
-        $scope.collection.data.forEach(function(item) {
-            $scope.convert(item.long, item.lat);
+
+        $scope.collection.data.forEach(function (item) {
+            convert(item.long, item.lat);
         });
         var markerLocation = [];
         $scope.generateMarkerPoints = function () {
