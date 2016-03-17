@@ -3,9 +3,10 @@ var browserSync = require('browser-sync').create();
 var jshint      = require('gulp-jshint');
     karma       = require('karma').Server;
 var stylus      = require('gulp-stylus');
+var reload      = browserSync.reload;
 
 //Default task
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'browser-sync']);
 
 //test with Karma
 gulp.task('test', function(done){
@@ -41,4 +42,5 @@ gulp.task('style', function () {
 gulp.task('watch', function(){
   gulp.watch('./stylesheets/style.stylus', ['stylus']);
   gulp.watch('./js/**/*.js', ['jshint', 'build-js']);
+  gulp.watch("*.html").on("change", reload);
 });
