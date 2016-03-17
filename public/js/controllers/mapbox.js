@@ -15,11 +15,8 @@ app.controller('mapbox', ['$scope', 'dbCollection', function ($scope, dbCollecti
         interactive: true,
         maxBounds: bounds
     });
-    $scope.coordinates = '';
     map.on('click', function (e) {
         dbCollection.lat = e.lngLat.lat;
         dbCollection.long = e.lngLat.lng;
-        console.log(dbCollection.lat);
-        console.log(dbCollection.long);
     });
 }]);
