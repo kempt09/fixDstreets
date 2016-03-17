@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div id="mapView"></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 well well-sm" ng-repeat="item in collection.data track by $index">
+            <div class="col-xs-3">
+                <img class="feed-image" src="http://placehold.it/75x75">
+            </div>
+            <div class="col-xs-9">
+                <p>{{item.description}}</p>
+                <p>lat: {{item.lat}}</p>
+                <p>lng: {{item.long}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<img ng-src="{{item.image}}">-->
