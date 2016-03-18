@@ -75,3 +75,6 @@
   border-radius 0
   border-color #1c87d9
   height 200px
+
+canvas:hover
+  cursor move

@@ -57,8 +57,8 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
                         "coordinates": [longitude, latitude]
                     },
                     "properties": {
-                        "title": i,
-                        "marker-symbol": "marker"
+                        "title": i + 1,
+                        "marker-symbol": "circle"
                     }
                 });
             }
