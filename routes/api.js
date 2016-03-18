@@ -3,7 +3,6 @@ var express = require('express');
 var Ticket = require('./../modules/db');
 var router = express.Router();
 
-
 /* GET home page. */
 router.get('/', function (req, res) {
     'use strict';
@@ -26,7 +25,8 @@ router.route('/api/submit').post(function (req, res) {
         long: req.body.long,
         date: Date.now(),
         description: req.body.description,
-        image: req.body.image
+        image: req.body.image,
+        address: req.body.address
     });
     //save issue
     issue.save(function (err) {
