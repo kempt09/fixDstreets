@@ -43,11 +43,14 @@
 }
 #homeImage {
   top: 0px;
-  width: 100%;
   left: 0px;
-  height: auto;
+  width: 100%;
+  height: 900px;
   position: fixed;
   padding-left: 0;
+  background: url("../Images/skyline.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #map-button-div {
   margin-bottom: 100px;
