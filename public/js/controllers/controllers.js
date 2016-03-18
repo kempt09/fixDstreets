@@ -65,6 +65,7 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
             return $scope.loadMap();
         };
         $scope.loadMap = function () {
+            map.on('mo')
             map.on('style.load', function () {
                 map.addSource("markers", {
                     "type": "geojson",
