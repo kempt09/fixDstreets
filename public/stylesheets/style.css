@@ -29,9 +29,6 @@
   border-radius: 0;
   margin: 20px;
 }
-.over {
-  z-index: 10;
-}
 #title {
   text-align: center;
   color: #fff;
@@ -42,12 +39,8 @@
   font-size: 6em;
 }
 #homeImage {
-  top: 0px;
-  width: 100%;
-  left: 0px;
-  height: auto;
-  position: fixed;
-  padding-left: 0;
+  background: url("/Images/skyline.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 #map-button-div {
   margin-bottom: 100px;
