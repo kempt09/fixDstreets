@@ -40,7 +40,7 @@ gulp.task('style', function () {
 
 //Watch files for changes
 gulp.task('watch', function(){
-  gulp.watch('./stylesheets/style.stylus', ['stylus']);
+  gulp.watch('./stylesheets/style.stylus', ['style']);
   gulp.watch('./js/**/*.js', ['jshint', 'build-js']);
   gulp.watch("*.html").on("change", reload);
 });
