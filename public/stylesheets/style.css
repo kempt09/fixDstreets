@@ -1,8 +1,7 @@
 #map {
   width: 100%;
   height: 500px;
-}
-padding 0 {
+  padding: 0;
   margin: 0;
 }
 #mapView {
@@ -10,9 +9,6 @@ padding 0 {
   height: 522px;
   margin-bottom: 0;
   padding-bottom: 0;
-}
-#worker {
-  height: 3.5em;
 }
 .well {
   border-radius: 0;
@@ -47,11 +43,14 @@ padding 0 {
 }
 #homeImage {
   top: 0px;
-  width: 100%;
   left: 0px;
-  height: auto;
+  width: 100%;
+  height: 1250px;
   position: fixed;
   padding-left: 0;
+  background: url("../Images/skyline.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #map-button-div {
   margin-bottom: 100px;
@@ -70,4 +69,7 @@ padding 0 {
   border-radius: 0;
   border-color: #1c87d9;
   height: 200px;
+}
+canvas:hover {
+  cursor: move;
 }

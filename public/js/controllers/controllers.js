@@ -5,28 +5,27 @@ app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($sc
     $scope.data = {};
     $scope.data.lat = dbCollection.lat;
     $scope.data.long = dbCollection.long;
-    $scope.sendData = function () {
-        $http.post('/api/submit', $scope.data)
-            .success(function (data) {
-                $scope.data = '';
-                $scope.info = data;
-            })
-            .error(function (data) {
-                console.log('error' + data);
-            });
-    };
+    $scope.data.address = '';
+    $scope.data.convert = dbCollection.convert(dbCollection.long, dbCollection.lat).then(function (res) {
+        console.log(res.data.features[0].place_name);
+        $scope.data.address = res.data.features[0].place_name;
+        $scope.sendData = function () {
+            console.log('send');
+            $http.post('/api/submit', $scope.data)
+                .success(function (data) {
+                    $scope.data = '';
+                    $scope.info = data;
+                })
+                .error(function (data) {
+                    console.log('error' + data);
+                });
+        };
+    });
+
 }]);
 
-app.controller('ticketFeed', ['$scope', 'getTickets', '$http', function ($scope, getTickets, $http) {
+app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTickets) {
     'use strict';
-    $scope.collection = '';
-    $scope.address = [];
-    $scope.convert = function (x, y) {
-        $http.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + x + ',' + y + '.json?access_token=pk.eyJ1IjoiZml4ZHN0cmVldHMiLCJhIjoiY2lsczNxMHYxMDhzNXZmbHlmbWdkM2psaiJ9.0HF3gwCxpsc_s2d8HxvXwg').success(function (data) {
-            $scope.address.push(data.features[0].place_name);
-            $scope.collection.data;
-        });
-    };
     getTickets.then(function(response){
         $scope.collection = response;
         mapboxgl.accessToken = 'pk.eyJ1IjoiZml4ZHN0cmVldHMiLCJhIjoiY2lsczNxMHYxMDhzNXZmbHlmbWdkM2psaiJ9.0HF3gwCxpsc_s2d8HxvXwg';
@@ -42,14 +41,11 @@ app.controller('ticketFeed', ['$scope', 'getTickets', '$http', function ($scope,
             interactive: true,
             maxBounds: bounds
         });
-        $scope.collection.data.forEach(function(item) {
-            $scope.convert(item.long, item.lat);
-        });
         var markerLocation = [];
         $scope.generateMarkerPoints = function () {
-            var i,
-                latitude,
-                longitude;
+            var latitude,
+                longitude,
+                i;
             for (i = 0; i < $scope.collection.data.length; i++) {
                 $scope.collection.data[i].index = i + 1;
                 latitude = $scope.collection.data[i].lat;
@@ -61,8 +57,8 @@ app.controller('ticketFeed', ['$scope', 'getTickets', '$http', function ($scope,
                         "coordinates": [longitude, latitude]
                     },
                     "properties": {
-                        "title": i,
-                        "marker-symbol": "marker"
+                        "title": i + 1,
+                        "marker-symbol": "circle"
                     }
                 });
             }
@@ -95,6 +91,10 @@ app.controller('ticketFeed', ['$scope', 'getTickets', '$http', function ($scope,
     });
 }]);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d86ca859d405c8a7f58734da488f4673fffc798b
 
 
 

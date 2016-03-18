@@ -1,7 +1,7 @@
 var app = app || {};
 
-app.controller('homeController',['navBarService', function(){
-	return ""
+app.controller('homeController',['$scope', function($scope){
+	
 
 } 
 ]);
