@@ -2,6 +2,7 @@
 var express = require('express');
 var Ticket = require('./../modules/db');
 var router = express.Router();
+var passport = require('../modules/passport');
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -47,6 +48,13 @@ router.route('/api/find').get(function (req, res) {
         res.json(response);
     });
 });
+
+//router.get('/auth/facebook', passport.authenticate('facebook'));
+//router.get('/auth/facebook/callback',
+//    passport.authenticate('facebook', {
+//        successRedirect: '/map',
+//        failureRedirect: '/'
+//    }));
 
 module.exports = router;
 

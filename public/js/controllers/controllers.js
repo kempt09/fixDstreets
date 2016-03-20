@@ -65,7 +65,6 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
             return $scope.loadMap();
         };
         $scope.loadMap = function () {
-            map.on('mo')
             map.on('style.load', function () {
                 map.addSource("markers", {
                     "type": "geojson",
@@ -92,10 +91,6 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
     });
 }]);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d86ca859d405c8a7f58734da488f4673fffc798b
 
 
 
