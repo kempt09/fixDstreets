@@ -48,6 +48,7 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
                 i;
             for (i = 0; i < $scope.collection.data.length; i++) {
                 $scope.collection.data[i].index = i + 1;
+                var description = $scope.collection.data[i].description;
                 latitude = $scope.collection.data[i].lat;
                 longitude = $scope.collection.data[i].long;
                 markerLocation.push({
@@ -57,6 +58,7 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
                         "coordinates": [longitude, latitude]
                     },
                     "properties": {
+                        "description": description,
                         "title": i + 1,
                         "marker-symbol": "circle"
                     }
@@ -82,7 +84,8 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
                         "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"] ,
                         "icon-image": "{marker-symbol}-15",
                         "text-offset": [0, -1.5],
-                        "text-anchor": "top"
+                        "text-anchor": "top",
+                        "icon-allow-overlap": true
                     }
                 });
             });

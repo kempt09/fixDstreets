@@ -2,7 +2,6 @@
 var express = require('express');
 var Ticket = require('./../modules/db');
 var router = express.Router();
-var passport = require('../modules/passport');
 
 /* GET home page. */
 router.get('/', function (req, res) {
