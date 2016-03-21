@@ -45,7 +45,11 @@
   top: 0px;
   left: 0px;
   width: 100%;
+<<<<<<< HEAD
+  height: 1250px;
+=======
   height: 1200px;
+>>>>>>> a5f1eb73ed9f2838d47d773711076aa118170260
   position: fixed;
   padding: 0;
   margin: 0;
@@ -84,6 +88,23 @@
   border-color: #1c87d9;
   height: 200px;
 }
+<<<<<<< HEAD
+@media only screen and (max-width: 750px) {
+  #homeImage {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background: url("../Images/skyline.jpg");
+    height: 1000px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #homeImage {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background: url("../Images/skyline.jpg");
+    height: 600px;
+  }
+=======
 canvas:hover {
   cursor: move;
 }
@@ -102,4 +123,5 @@ canvas:hover {
 #map-img {
   width: 10px;
   height: auto;
+>>>>>>> a5f1eb73ed9f2838d47d773711076aa118170260
 }
