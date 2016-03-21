@@ -58,9 +58,9 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
                         "coordinates": [longitude, latitude]
                     },
                     "properties": {
+                        "marker-symbol": "circle",
                         "description": description,
-                        "title": i + 1,
-                        "marker-symbol": "circle"
+                        "title": i + 1
                     }
                 });
             }
@@ -77,15 +77,20 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
                 });
                 map.addLayer({
                     "id": "markers",
+                    "interactive": true,
                     "type": "symbol",
                     "source": "markers",
                     "layout": {
                         "text-field": "{title}",
-                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"] ,
+                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
                         "icon-image": "{marker-symbol}-15",
                         "text-offset": [0, -1.5],
                         "text-anchor": "top",
                         "icon-allow-overlap": true
+                    },
+                    "paint": {
+                        "text-halo-color": "#fff",
+                        "text-halo-width": 2
                     }
                 });
             });
