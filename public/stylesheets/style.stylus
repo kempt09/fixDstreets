@@ -25,12 +25,13 @@
   margin-top 8px
 
 .forward
-  background-color #cc0000
+  background-color #003459
   color #FFFFFF
   display inline
   border-radius 0 
   margin 20px
   border none
+  padding 10px
 
 .over
   z-index 10
@@ -59,13 +60,13 @@
 	margin-top 10%
 
 #header
-	background-color #cc0000
+	background-color #003459
 	
 .white
 	color white
 
 .white:hover
-	color #1a1a1a
+	color #00A8E8
 
 .borderRed
 	border-top 2px solid #cc0000
@@ -86,9 +87,10 @@ nav
 
 .map-button
   border-radius 0
-  border-color #cc0000
+  border-color #003459
   margin-top 20px
-  color black
+  color white
+  background-color #003459
   width 100px
 
 #input-description-div
@@ -96,7 +98,7 @@ nav
 
 #textbox
 	border-radius 0
-	border-color #cc0000
+	border-color #003459
 	height 200px
 	background-color #f5f5f5
 	
