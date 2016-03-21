@@ -1,9 +1,9 @@
-var gulp        = require('gulp');
+var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
-var jshint      = require('gulp-jshint');
-    karma       = require('karma').Server;
-var stylus      = require('gulp-stylus');
-var reload      = browserSync.reload;
+var jshint = require('gulp-jshint');
+var karma  = require('karma').Server;
+var stylus = require('gulp-stylus');
+var reload = browserSync.reload;
 
 //Default task
 gulp.task('default', ['watch', 'browser-sync']);
@@ -26,7 +26,7 @@ gulp.task('lint', function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./bin/www"
         }
     });
 });
@@ -35,7 +35,7 @@ gulp.task('browser-sync', function() {
 gulp.task('style', function () {
   return gulp.src('./stylesheets/style.stylus')
     .pipe(stylus())
-    .pipe(gulp.dest('./stylesheets/build'));
+    .pipe(gulp.dest('./stylesheets/style.css'));
 });
 
 //Watch files for changes

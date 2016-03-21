@@ -19,4 +19,12 @@ app.controller('mapbox', ['$scope', 'dbCollection', function ($scope, dbCollecti
         dbCollection.lat = e.lngLat.lat;
         dbCollection.long = e.lngLat.lng;
     });
+    map.on('click', function (e) {
+        var mark = new mapboxgl.Popup({
+            closeButton: false
+        })
+            .setLngLat(e.lngLat)
+            .setHTML('<img id="map-img" src="../Images/flag.png" >')
+            .addTo(map);
+    });
 }]);
