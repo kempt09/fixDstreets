@@ -25,19 +25,10 @@
 
       </div>
     </nav>
-
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
       <ng-view>
       <!--content goes here-->
       </ng-view>
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="https://apis.google.com/js/platform.js"></script>
       <script src="./lib/angular.min.js"></script>
       <script src="./lib/angular-route.min.js"></script>
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
