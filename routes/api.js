@@ -6,10 +6,7 @@ var fs = require('fs');
 var S3FS = require('s3fs');
 var multiparty = require('connect-multiparty');
 var multipartyMiddware = multiparty();
-var s3fsUploads = new S3FS('fixdstreets',{
-    accessKeyId: "AKIAI7OUBEY6DSO73ODA",
-    secretAccessKey: "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"
-});
+
 
 // Initialize S3 bucket for files
 s3fsUploads.create();
