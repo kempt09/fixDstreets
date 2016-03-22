@@ -123,8 +123,8 @@ canvas:hover
 #mobileNav
 	display inline-flex
  
-// #signInButtons
-//   float right 
+#signInButtons
+  float right 
 
-// #g-signin2
-//   margin-top 8px
+#g-signin2
+  margin-top 8px

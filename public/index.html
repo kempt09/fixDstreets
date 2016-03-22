@@ -22,18 +22,12 @@
           <li><a href="#/feed"><span class="white">View Issues</span></a></li>
           <li><a href="#/map"><span class="white">Submit Issue</span></a></li>
         </ul>
-
+        <ul class="nav navbar-nav mobile-bar" id="signInButtons">
+        	<li class="g-signin2" id="g-signin2" data-onsuccess="onSignIn"></li>
+        </ul>
       </div>
     </nav>
 
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
       <ng-view>
       <!--content goes here-->
       </ng-view>
