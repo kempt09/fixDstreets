@@ -24,8 +24,16 @@ app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($sc
 
 }]);
 
-app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTickets) {
+app.controller('ticketFeed', ['$scope', 'getTickets', 'dbCollection', function ($scope, getTickets, dbCollection) {
     'use strict';
+        $scope.auth = function(googleUser){
+         dbCollection.profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail());
+        }
+        
     getTickets.then(function(response){
         $scope.collection = response;
         mapboxgl.accessToken = 'pk.eyJ1IjoiZml4ZHN0cmVldHMiLCJhIjoiY2lsczNxMHYxMDhzNXZmbHlmbWdkM2psaiJ9.0HF3gwCxpsc_s2d8HxvXwg';

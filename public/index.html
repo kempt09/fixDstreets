@@ -5,6 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="name" content="content">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="google-signin-client_id" content="80901534745-345umh4ud2vajns1cden6g9dp80lufio.apps.googleusercontent.com">
       <title>Fix D-Streets</title>
       <link rel="stylesheet" href="./lib/bootstrap.min.css">
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet'>
@@ -12,20 +13,31 @@
   </head>
   <body ng-app="myApp">
     <nav id="navBar" class="navbar navbar-default">
-      <div class="container-fluid white" id="header">
-        <div class="navbar-header white">
+      <div class="container-fluid" id="header">
+        <div class="navbar-header hidden-xs">
           <a class="navbar-brand" href="#/"><span class="white">Fix D-Streets</span></a>
           </div>
-        <ul class="nav navbar-nav white">
+        <ul class="nav navbar-nav mobile-bar" id="mobileNav">
           <li><a href="#/"><span class="white">Home</span></a></li>
           <li><a href="#/feed"><span class="white">View Issues</span></a></li>
           <li><a href="#/map"><span class="white">Submit Issue</span></a></li>
         </ul>
+
       </div>
     </nav>
+
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
       <ng-view>
       <!--content goes here-->
       </ng-view>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
       <script src="./lib/angular.min.js"></script>
       <script src="./lib/angular-route.min.js"></script>
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
