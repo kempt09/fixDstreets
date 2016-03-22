@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up MongoDB
-mongoose.connect('mongodb://fixdstreets:GrandCircus2016@ds011429.mlab.com:11429/tickets');
+
 
 // Routes to use
 app.use('/', routes);

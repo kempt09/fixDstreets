@@ -18,8 +18,8 @@
   border-top none
 
 .feed-image
-  height 75px
-  width 75px
+  width 100%
+  height auto
   margin-top 8px
 
 .forward
@@ -122,9 +122,3 @@ canvas:hover
 
 #mobileNav
 	display inline-flex
- 
-// #signInButtons
-//   float right 
-
-// #g-signin2
-//   margin-top 8px
