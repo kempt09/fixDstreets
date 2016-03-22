@@ -2,6 +2,20 @@
 var express = require('express');
 var Ticket = require('./../modules/db');
 var router = express.Router();
+var fs = require('fs');
+var S3FS = require('s3fs');
+var multiparty = require('connect-multiparty');
+var multipartyMiddware = multiparty();
+var s3fsUploads = new S3FS('fixdstreets',{
+    accessKeyId: "AKIAI7OUBEY6DSO73ODA",
+    secretAccessKey: "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"
+});
+
+// Initialize S3 bucket for files
+s3fsUploads.create();
+
+// Initialize middleware to parse request
+router.use(multipartyMiddware);
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -48,12 +62,22 @@ router.route('/api/find').get(function (req, res) {
     });
 });
 
-//router.get('/auth/facebook', passport.authenticate('facebook'));
-//router.get('/auth/facebook/callback',
-//    passport.authenticate('facebook', {
-//        successRedirect: '/map',
-//        failureRedirect: '/'
-//    }));
+// AWS Cloud Service
+
+router.route('/api/upload').post(function(req, res){
+    'use strict';
+    var file = req.files.file;
+    console.log(file);
+    var stream = fs.createReadStream(file.path);
+    s3fsUploads.writeFile(file.name, stream).then(function () {
+        fs.unlink(file.path, function (err) {
+            if (err) {
+                console.error(err);
+            }
+        });
+        res.status(200).end();
+    });
+});
 
 module.exports = router;
 
