@@ -8,9 +8,7 @@ var TicketsSchema = new Schema({
     description: String,
     image: String,
     address: String,
-    filePath: String,
-    name: String,
-    email: String
+    filePath: String
 });
 
 module.exports = mongoose.model('Tickets', TicketsSchema);

@@ -1,6 +1,7 @@
 var app = app || {};
 
 app.directive('fileModel', ['$parse', function ($parse) {
+    'use strict';
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {

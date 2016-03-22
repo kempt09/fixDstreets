@@ -99,12 +99,15 @@ app.controller('ticketFeed', ['$scope', 'getTickets', 'dbCollection', function (
     });
 }]);
 
-app.controller('uploadImg', ['$scope', 'fileUpload', 'dbCollection', function ($scope, fileUpload, dbCollection) {
+app.controller('uploadImg', ['$scope', 'fileUpload', 'dbCollection', '$location', function ($scope, fileUpload, dbCollection, $location) {
+    'use strict';
+    $scope.image = '';
     $scope.uploadFile = function () {
         var file = $scope.uploadedImage;
         var uploadUrl = "/api/upload";
         fileUpload.uploadFileToUrl(file, uploadUrl);
         dbCollection.filePath = file.name;
+        $location.path('/submit');
     };
 }]);
 
