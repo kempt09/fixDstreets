@@ -6,6 +6,8 @@ var fs = require('fs');
 var S3FS = require('s3fs');
 var multiparty = require('connect-multiparty');
 var multipartyMiddware = multiparty();
+
+// Amazon S3 Credentials
 var s3fsUploads = new S3FS('fixdstreets',{
     accessKeyId: "AKIAI7OUBEY6DSO73ODA",
     secretAccessKey: "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"
@@ -40,9 +42,7 @@ router.route('/api/submit').post(function (req, res) {
         date: Date.now(),
         description: req.body.description,
         address: req.body.address,
-        filePath: req.body.filePath,
-        name: req.body.name,
-        email: req.body.email
+        filePath: req.body.filePath
     });
     //save issue
     issue.save(function (err) {
