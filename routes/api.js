@@ -48,6 +48,12 @@ router.route('/api/find').get(function (req, res) {
     });
 });
 
+router.route('/api/upload').post(function (req, res) {
+    console.log(req.body);
+    console.log(req.files);
+    res.json({success: true});
+});
+
 //router.get('/auth/facebook', passport.authenticate('facebook'));
 //router.get('/auth/facebook/callback',
 //    passport.authenticate('facebook', {

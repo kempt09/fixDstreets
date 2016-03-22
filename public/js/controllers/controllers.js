@@ -99,7 +99,13 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
     });
 }]);
 
-
-
+app.controller('uploadImg', ['$scope', 'fileUpload', function ($scope, fileUpload) {
+    $scope.uploadFile = function () {
+        var file = $scope.uploadedImage;
+        console.dir(file);
+        var uploadUrl = "/api/upload";
+        fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
+}]);
 
 

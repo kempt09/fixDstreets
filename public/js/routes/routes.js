@@ -15,9 +15,9 @@ app.config(function ($routeProvider) {
             templateUrl: './views/map.html',
             controller: 'mapbox'
         })
-        .when('/upload', {
+        .when('/input', {
             templateUrl: './views/upload-picture.html',
-            controller: 'uploadImage'
+            controller: 'uploadImg'
         })
         .when('/submit', {
             templateUrl: './views/submit.html',
