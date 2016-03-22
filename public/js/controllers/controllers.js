@@ -5,7 +5,7 @@ app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($sc
     $scope.data = {};
     $scope.data.lat = dbCollection.lat;
     $scope.data.long = dbCollection.long;
-    $scope.data.address = '';
+    $scope.data.address = dbCollection.filePath;
     $scope.data.convert = dbCollection.convert(dbCollection.long, dbCollection.lat).then(function (res) {
         console.log(res.data.features[0].place_name);
         $scope.data.address = res.data.features[0].place_name;
@@ -99,12 +99,12 @@ app.controller('ticketFeed', ['$scope', 'getTickets', function ($scope, getTicke
     });
 }]);
 
-app.controller('uploadImg', ['$scope', 'fileUpload', function ($scope, fileUpload) {
+app.controller('uploadImg', ['$scope', 'fileUpload', 'dbCollection', function ($scope, fileUpload, dbCollection) {
     $scope.uploadFile = function () {
         var file = $scope.uploadedImage;
-        console.dir(file);
         var uploadUrl = "/api/upload";
         fileUpload.uploadFileToUrl(file, uploadUrl);
+        dbCollection.filePath = file.name;
     };
 }]);
 

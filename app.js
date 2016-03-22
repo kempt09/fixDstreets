@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/api');
 var mongoose = require('mongoose');
-var multer = require('multer');
 
 // view engine setup
 app.use(logger('dev'));
@@ -15,8 +14,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(multer({dest: './uploads/'}).any());
-
 
 // Set up MongoDB
 mongoose.connect('mongodb://fixdstreets:GrandCircus2016@ds011429.mlab.com:11429/tickets');
