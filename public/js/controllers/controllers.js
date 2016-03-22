@@ -5,12 +5,12 @@ app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($sc
     $scope.data = {};
     $scope.data.lat = dbCollection.lat;
     $scope.data.long = dbCollection.long;
-    $scope.data.address = dbCollection.filePath;
+    $scope.data.address = '';
+    $scope.data.filePath = dbCollection.filePath;
+    console.log(dbCollection.filePath);
     $scope.data.convert = dbCollection.convert(dbCollection.long, dbCollection.lat).then(function (res) {
-        console.log(res.data.features[0].place_name);
         $scope.data.address = res.data.features[0].place_name;
         $scope.sendData = function () {
-            console.log('send');
             $http.post('/api/submit', $scope.data)
                 .success(function (data) {
                     $scope.data = '';
@@ -21,21 +21,20 @@ app.controller('submitTicket', ['$scope', '$http', 'dbCollection', function ($sc
                 });
         };
     });
-
 }]);
 
 app.controller('ticketFeed', ['$scope', 'getTickets', 'dbCollection', function ($scope, getTickets, dbCollection) {
     'use strict';
-        $scope.auth = function(googleUser){
-         dbCollection.profile = googleUser.getBasicProfile();
-          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-          console.log('Name: ' + profile.getName());
-          console.log('Image URL: ' + profile.getImageUrl());
-          console.log('Email: ' + profile.getEmail());
-        }
-        
+    $scope.auth = function(googleUser){
+        dbCollection.profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+    };
     getTickets.then(function(response){
         $scope.collection = response;
+        console.log(response);
         mapboxgl.accessToken = 'pk.eyJ1IjoiZml4ZHN0cmVldHMiLCJhIjoiY2lsczNxMHYxMDhzNXZmbHlmbWdkM2psaiJ9.0HF3gwCxpsc_s2d8HxvXwg';
         var bounds = [
             [-83.03841204223656, 42.32883494037918],

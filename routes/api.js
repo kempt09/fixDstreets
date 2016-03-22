@@ -39,8 +39,10 @@ router.route('/api/submit').post(function (req, res) {
         long: req.body.long,
         date: Date.now(),
         description: req.body.description,
-        image: req.body.image,
-        address: req.body.address
+        address: req.body.address,
+        filePath: req.body.filePath,
+        name: req.body.name,
+        email: req.body.email
     });
     //save issue
     issue.save(function (err) {
@@ -75,7 +77,7 @@ router.route('/api/upload').post(function(req, res){
                 console.error(err);
             }
         });
-        res.status(200).end();
+        return res.json({path: file.path}).end();
     });
 });
 
