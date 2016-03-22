@@ -116,3 +116,6 @@ canvas:hover {
   width: 10px;
   height: auto;
 }
+#mobileNav {
+  display: inline-flex;
+}
