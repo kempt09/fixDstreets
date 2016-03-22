@@ -7,7 +7,10 @@ var TicketsSchema = new Schema({
     date: Date,
     description: String,
     image: String,
-    address: String
+    address: String,
+    filePath: String,
+    name: String,
+    email: String
 });
 
 module.exports = mongoose.model('Tickets', TicketsSchema);
