@@ -5,10 +5,14 @@ var router = express.Router();
 var fs = require('fs');
 var S3FS = require('s3fs');
 var multiparty = require('connect-multiparty');
+var config = require('../modules/config');
 var multipartyMiddware = multiparty();
 
 // Amazon S3 Credentials
-
+var s3fsUploads = new S3FS('fixdstreets', {
+    accessKeyId: config.accessKeyId,
+    secretAccessKey: config.secretAccessKey
+});
 
 // Initialize S3 bucket for files
 s3fsUploads.create();
