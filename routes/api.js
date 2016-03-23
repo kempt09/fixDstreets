@@ -8,11 +8,14 @@ var multiparty = require('connect-multiparty');
 var config = require('../modules/config');
 var multipartyMiddware = multiparty();
 
+<<<<<<< HEAD
 // Amazon S3 Credentials
 var s3fsUploads = new S3FS('fixdstreets', {
     accessKeyId: config.accessKeyId,
     secretAccessKey: config.secretAccessKey
 });
+=======
+>>>>>>> 9dcf557e13a036d8623343510b10e0290f544c75
 
 // Initialize S3 bucket for files
 s3fsUploads.create();
