@@ -66,8 +66,7 @@ router.route('/api/find').get(function (req, res) {
 });
 
 // AWS Cloud Service
-
- router.route('/api/upload').post(function(req, res){
+router.route('/api/upload').post(function(req, res){
      'use strict';
      var file = req.files.file;
      console.log(file);

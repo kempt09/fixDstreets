@@ -12,7 +12,7 @@ app.config(function ($routeProvider) {
             controller: 'ticketFeed'
         })
         .when('/map', {
-            templateUrl: './views/map.html',
+            templateUrl: './views/Map.html',
             controller: 'mapbox'
         })
         .when('/input', {

@@ -1,3 +1,10 @@
 .idea/
 modules/config.js
+logs/*
+!.gitkeep
 node_modules/
+tmp
+.DS_Store
+.env
+
+
