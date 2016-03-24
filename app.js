@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/api');
 var mongoose = require('mongoose');
+var config = require('./modules/config');
 
 // view engine setup
 app.use(logger('dev'));
@@ -16,7 +17,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up MongoDB
-
+mongoose.connect(config.mongoDB);
 
 // Routes to use
 app.use('/', routes);

@@ -67,6 +67,7 @@ router.route('/api/find').get(function (req, res) {
 
 // AWS Cloud Service
 
+
 // router.route('/api/upload').post(function(req, res){
 //     'use strict';
 //     var file = req.files.file;
@@ -81,6 +82,21 @@ router.route('/api/find').get(function (req, res) {
 //         return res.json({path: file.path}).end();
 //     });
 // });
+
+router.route('/api/upload').post(function(req, res){
+    'use strict';
+    var file = req.files.file;
+    var stream = fs.createReadStream(file.path);
+    s3fsUploads.writeFile(file.name, stream).then(function () {
+        fs.unlink(file.path, function (err) {
+            if (err) {
+                console.error(err);
+            }
+        });
+        return res.json({path: file.path}).end();
+    });
+});
+
 
 module.exports = router;
 
