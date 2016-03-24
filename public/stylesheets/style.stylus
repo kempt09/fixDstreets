@@ -18,9 +18,9 @@
   border-top none
 
 .feed-image
-  width 100px
+  width 100%
   height auto
-  margin-top 8px
+  margin-top 5px
 
 .forward
   background-color #003459
