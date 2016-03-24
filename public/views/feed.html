@@ -5,14 +5,14 @@
         </div>
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 well well-sm" ng-repeat="item in collection.data track by $index">
             <div class="col-xs-1">
-                <h6>{{item.index}}</h6>
+                <h1>{{item.index}}</h1>
             </div>
             <div class="col-xs-3">
-                <img ng-click="makeBig()" class="feed-image" ng-src="https://s3.amazonaws.com/fixdstreets/{{item.filePath}}">
+                <img class="feed-image" ng-src="https://s3.amazonaws.com/fixdstreets/{{item.filePath}}">
             </div>
-            <div class="col-xs-8">
-                <p>{{item.description}}</p>
-                <p>{{item.address}}</p>
+            <div class="col-xs-8 description">
+                <h3>{{item.description}}</h3>
+                <h3>{{item.address}}</h3>
             </div>
         </div>
     </div>

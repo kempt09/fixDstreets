@@ -1,12 +1,21 @@
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2 text-center">
-			<h3>Please send a picture of the current issue found</h3>
-		</div>
+	<div class="row text-center" id="lower">
+		<div class="col-xs-12">
+			<h1>Please upload a picture of the issue.</h1>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2">
+                <input type="file" id="file" class="btn btn-default inputfile" name="file" ng-model="fileInfo"  file-model="uploadedImage" required/>
+                <label for="file" class="btn btn-default fileBtn">Choose a Picture</label>
+                <button id="picButton" class="btn btn-default fileBtn" ng-click="uploadFile()">Next</button>
+        </div>
 	</div>
+</div>
 
+<<<<<<< HEAD
 <form id="imageUpload">
     <input type="file" class="btn btn-default" id="fileBtn" file-model="uploadedImage" required/>
     <button id="picButton" class="btn btn-default map-button" ng-click="uploadFile()">Add Picture</button>
 </form>
+=======
+>>>>>>> c75fa90200f28c95ed4608aedaaa355adddbc941
 
