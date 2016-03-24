@@ -90,7 +90,7 @@ nav
   width 100px
 
 #input-description-div
-  margin-top 10%
+  margin-top 5%
 
 #textbox
 	border-radius 0
@@ -122,3 +122,20 @@ canvas:hover
 
 #mobileNav
 	display inline-flex
+
+#imageUpload
+  width 20%
+  margin 5% auto
+
+#picButton
+  margin-left 30%
+  margin-top 13%  
+  
+#fileBtn 
+  width 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+    

@@ -5,20 +5,17 @@ var router = express.Router();
 var fs = require('fs');
 var S3FS = require('s3fs');
 var multiparty = require('connect-multiparty');
-var config = require('../modules/config');
+// var config = require('../modules/config');
 var multipartyMiddware = multiparty();
 
-<<<<<<< HEAD
 // Amazon S3 Credentials
-var s3fsUploads = new S3FS('fixdstreets', {
-    accessKeyId: config.accessKeyId,
-    secretAccessKey: config.secretAccessKey
-});
-=======
->>>>>>> 9dcf557e13a036d8623343510b10e0290f544c75
+// var s3fsUploads = new S3FS('fixdstreets', {
+//     accessKeyId: config.accessKeyId,
+//     secretAccessKey: config.secretAccessKey
+// });
 
 // Initialize S3 bucket for files
-s3fsUploads.create();
+// s3fsUploads.create();
 
 // Initialize middleware to parse request
 router.use(multipartyMiddware);
@@ -70,20 +67,20 @@ router.route('/api/find').get(function (req, res) {
 
 // AWS Cloud Service
 
-router.route('/api/upload').post(function(req, res){
-    'use strict';
-    var file = req.files.file;
-    console.log(file);
-    var stream = fs.createReadStream(file.path);
-    s3fsUploads.writeFile(file.name, stream).then(function () {
-        fs.unlink(file.path, function (err) {
-            if (err) {
-                console.error(err);
-            }
-        });
-        return res.json({path: file.path}).end();
-    });
-});
+// router.route('/api/upload').post(function(req, res){
+//     'use strict';
+//     var file = req.files.file;
+//     console.log(file);
+//     var stream = fs.createReadStream(file.path);
+//     s3fsUploads.writeFile(file.name, stream).then(function () {
+//         fs.unlink(file.path, function (err) {
+//             if (err) {
+//                 console.error(err);
+//             }
+//         });
+//         return res.json({path: file.path}).end();
+//     });
+// });
 
 module.exports = router;
 
