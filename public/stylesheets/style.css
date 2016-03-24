@@ -122,16 +122,13 @@ canvas:hover {
 #imageUpload {
   width: 20%;
   margin: 5% auto;
+  display: inline-flex;
 }
-#picButton {
-  margin-left: 30%;
-  margin-top: 13%;
-}
-#fileBtn {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+.fileBtn {
+  border-radius: 0;
+  border-color: #003459;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #003459;
+  width: 100px;
 }
