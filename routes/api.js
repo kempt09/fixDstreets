@@ -70,7 +70,6 @@ router.route('/api/find').get(function (req, res) {
 router.route('/api/upload').post(function(req, res){
     'use strict';
     var file = req.files.file;
-    console.log(file);
     var stream = fs.createReadStream(file.path);
     s3fsUploads.writeFile(file.name, stream).then(function () {
         fs.unlink(file.path, function (err) {
